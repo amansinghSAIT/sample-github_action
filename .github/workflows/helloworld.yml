@@ -1,19 +1,17 @@
-name: "hello world workflow"
-
+name: Hello World Workflow
 
 on:
   push:
-     branch:
-     - master
-     - production
-
+    branches:
+      - main  # Trigger on push to the main branch
 
 jobs:
-  hello_world:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout code
-      - uses: action/checkout@v2
+  hello:
+    runs-on: ubuntu-latest  # Run the job on the latest Ubuntu version
 
-      - name: hello world
-        run: echo "hello world"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Checks out the repository code
+
+      - name: Say Hello
+        run: echo "🎉 Hello from GitHub Actions!"
